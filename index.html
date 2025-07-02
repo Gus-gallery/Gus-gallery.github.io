@@ -44,7 +44,7 @@
         }
 
         .project-box {
-            background-color: #2a2a2a;
+            background-color: #242424;
             padding: 1.5rem;
             border-radius: 7px;
             width: 100%;
@@ -55,6 +55,10 @@
         .project-box h4 {
             margin-top: 0;
             margin-bottom: 1rem;
+        }
+
+        .project-box p {
+            margin-bottom: 0;
         }
 
 
@@ -76,6 +80,194 @@
             border-radius: 7px;
             object-fit: contain;
         }
+
+        footer {
+            background: #242424;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-button {
+            background-color: #242424;
+            color: rgb(231, 224, 219);
+            padding: 0.5rem 4.63rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .footer-button:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .light-mode {
+            background-color: rgb(231, 224, 219);
+            color: #242424;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: rgb(231, 224, 219);
+            transition: color 0.3s ease;
+        }
+
+        .light-mode .theme-toggle {
+            color: #242424;
+        }
+
+        .project-box {
+            background-color: #242424;
+            padding: 1.5rem;
+            border-radius: 7px;
+            width: 100%;
+            max-width: 600px;
+            transition: box-shadow 0.3s ease, background-color 0.5s ease;
+        }
+
+        .project-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-wrapper {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+        }
+
+        /* SWITCH STYLING */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            background-color: #242424;
+            border-radius: 34px;
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            transition: background-color 0.4s;
+        }
+
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: rgb(231, 224, 219);
+            transition: transform 0.4s ease;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        /* Icons */
+        .slider .icon {
+            position: absolute;
+            top: 4px;
+            font-size: 18px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .sun {
+            left: 8px;
+            color: #f5d76e;
+        }
+
+        .moon {
+            right: 8px;
+            color: #d6d6f0;
+        }
+
+        /* Move toggle when checked */
+        input:checked+.slider::before {
+            transform: translateX(26px);
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: rgb(231, 224, 219);
+            color: #242424;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .light-mode .site-title,
+        .light-mode main,
+        .light-mode .intro,
+        .light-mode .project-heading {
+            color: #242424;
+        }
+
+        .light-mode footer {
+            background-color: rgb(231, 224, 219);
+        }
+
+        .light-mode .footer-button {
+            color: #242424;
+            background-color: rgb(231, 224, 219);
+        }
+
+        .light-mode .footer-button:hover {
+            box-shadow: 0 0 8px rgba(255, 156, 202, 0.6);
+        }
+
+        .project-box {
+            background-color: #242424;
+            transition: box-shadow 0.3s ease, background-color 0.5s ease;
+        }
+
+        .project-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .light-mode .project-box {
+            background-color: rgb(231, 224, 219);
+            box-shadow: none;
+        }
+
+        .light-mode .project-box:hover {
+            box-shadow: 0 0 12px rgba(255, 156, 202, 0.6);
+        }
+
+        /* Mobilvenlig */
+        @media (max-width: 600px) {
+            .footer-button {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+        }
+
 
         /* === Mobilvenlig styling === */
         @media (max-width: 600px) {
@@ -116,10 +308,20 @@
         <div class="site-title">werdelin.portfolio</div>
     </header>
 
+    <div class="toggle-wrapper">
+        <label class="switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </span>
+        </label>
+    </div>
+
     <main>
         <div class="intro">
             <h4>Gustav Campbell Werdelin</h4>
-            <p>Ex-gallerist, bachelor's degree in art history.</p>
+            <p>Ex-gallerist with a bachelor's degree in art history.</p>
             <p>Enthusiastic about functionalist design and minimalism in art.</p>
             <p>Beginner-programmer.</p>
         </div>
@@ -130,32 +332,65 @@
 
         <!-- KASSE 1 -->
         <div class="project-box">
-            <h4>Minor Gallery : 1/2, 2024 - 1/7, 2025</h4>
+            <h4>Minor Gallery</h4>
+            <p>1/2, 2024 - 1/7, 2025</p>
             <p>Co-founder of gallery and exhibition-space Minor Gallery in Copenhagen.</p>
-            <div class="image-container">
+            <!-- <div class="image-container">
                 <img src="noa.jpeg" alt="Exhibition at Minor Gallery" />
-            </div>
+            </div> -->
         </div>
 
         <!-- KASSE 2 -->
         <div class="project-box">
-            <h4>Bachelor's degree in art history : 1/9, 2022 - 12/6, 2025</h4>
-            <p>Bachelor's degree in art history from University of Copenhagen with a special interest in minimalism
-                and hyper-aesthetics in the arts.</p>
-            <div class="image-container">
+            <h4>Bachelor's degree in art history</h4>
+            <p>1/9, 2022 - 12/6, 2025</p>
+            <p>Bachelor's degree in art history from University of Copenhagen.</p>
+            <!-- <div class="image-container">
                 <img src="lee.jpg" alt="Art history" />
-            </div>
+            </div> -->
         </div>
 
         <!-- KASSE 3 -->
         <div class="project-box">
-            <h4>Designer's assistant at Hermés : Amsterdam 2020 & Barcelona 2022 </h4>
-            <p>Assistant working for the designer at the Hermés flagship stores in Amsterdam and Barcelona.</p>
-            <div class="image-container">
+            <h4>Designer's assistant at Hermés</h4>
+            <p>Amsterdam 2020 & Barcelona 2022 </p>
+            <p>Assistant working for the designer at Hermés.</p>
+            <!-- <div class="image-container">
                 <img src="hermes.jpg" alt="Hermes" />
-            </div>
+            </div> -->
         </div>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <a href="mailto:gustav.werdelin@gmail.com" class="footer-button">Email</a>
+            <a href="https://www.instagram.com/gustavwerdelin" target="_blank" class="footer-button">Instagram</a>
+            <a href="https://www.linkedin.com/in/gustavwerdelin" target="_blank" class="footer-button">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        const checkbox = document.getElementById("themeToggle");
+
+        // Load stored theme
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-mode");
+            checkbox.checked = true;
+        }
+
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                document.body.classList.add("light-mode");
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.remove("light-mode");
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+
+
+
 </body>
 
 </html>
