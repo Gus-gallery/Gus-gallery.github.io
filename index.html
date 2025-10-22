@@ -246,6 +246,26 @@
         .project-box {
             background-color: #313131;
             transition: box-shadow 0.3s ease, background-color 0.5s ease;
+            
+        }
+
+        .project-box {
+            background-color: #313131;
+            transition: box-shadow 0.3s ease, background-color 0.5s ease;
+            
+        }
+
+        .project-box img {
+            width: auto; 
+            max-height: 100px;
+            filter: brightness(80%)
+        }
+
+        .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
         }
 
         .footer-button {
@@ -266,7 +286,6 @@
             box-shadow: 0 0 12px rgba(155, 153, 154, 0.6);
         }
 
-        /* Mobilvenlig */
         @media (max-width: 600px) {
             .footer-button {
                 flex: 1 1 100%;
@@ -274,8 +293,6 @@
             }
         }
 
-
-        /* === Mobilvenlig styling === */
         @media (max-width: 600px) {
             main {
                 padding: 1.5rem;
@@ -333,47 +350,47 @@
         </div>
 
         <div class="project-heading">
+            <h4>Experience with:</h4>
+        </div>
+        <div class="project-box">
+            <div class="image-grid">
+                <img src="billeder/react.png" alt="React">
+                <img src="billeder/next.png" alt="Next">
+                <img src="billeder/js.png" alt="JS">
+                <img src="billeder/vite.png" alt="Vite">
+                <img src="billeder/Java.png" alt="Java">
+                <img src="billeder/python.png" alt="Python">
+            </div>
+        </div>
+
+
+
+        <div class="project-heading">
             <h4>Take a look at some of my work.</h4>
         </div>
 
-        <!-- KASSE 1 -->
         <div class="project-box">
             <h4>Minor Gallery</h4>
             <p>1/2, 2024 - 1/7, 2025</p>
             <p>Co-founder of gallery and exhibition-space Minor Gallery in Copenhagen.</p>
-            <!-- <div class="image-container">
-                <img src="noa.jpeg" alt="Exhibition at Minor Gallery" />
-            </div> -->
         </div>
 
-        <!-- KASSE 2 -->
         <div class="project-box">
             <h4>Bachelor's degree in art history</h4>
             <p>1/9, 2022 - 12/6, 2025</p>
             <p>Bachelor's degree in art history from University of Copenhagen.</p>
-            <!-- <div class="image-container">
-                <img src="lee.jpg" alt="Art history" />
-            </div> -->
         </div>
 
-        <!-- KASSE 3 -->
         <div class="project-box">
             <h4>Designer's assistant at Hermés</h4>
             <p>Amsterdam 2020 & Barcelona 2022 </p>
             <p>Assistant working for the designer at Hermés.</p>
-            <!-- <div class="image-container">
-                <img src="hermes.jpg" alt="Hermes" />
-            </div> -->
         </div>
 
-        <!-- KASSE 4 -->
         <div class="project-box">
             <h4>Museum assistant in Kanazawa, Japan</h4>
             <p>1/6 - 1/7, 2017</p>
             <p>Museum assistant at 21st Century Museum of Contemporary Art in Kanazawa: Everyday Life - Signs of Awareness, 2017.</p>
-            <!-- <div class="image-container">
-                <img src="hermes.jpg" alt="Hermes" />
-            </div> -->
         </div>
     </main>
 
